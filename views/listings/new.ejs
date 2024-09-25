@@ -1,0 +1,67 @@
+<% layout("/layouts/boilerplate") %>
+
+    <!-- <body>
+        <form method="POST" action="/listings">
+            <input name="listing[title]" placeholder="enter title" type="text" /> -->
+            <!-- listing[title]  => listing ek object hai aur uske under title hai => listing = { title:"Show newcar", description:"this is new car "}  ab hum is object ko return karenge body ke sath-->
+            <!-- <br />
+            <textarea name="listing[description]" placeholder="enter description"></textarea>
+            <br />
+            <input name="listing[price]" placeholder="enter price" type="number" />
+            <br />
+            <input name="listing[image]" placeholder="enter image url" type="text" />
+            <br />
+            <input name="listing[location]" placeholder="enter location" type="text" />
+            <br />
+            <input name="listing[country]" placeholder="enter country" type="text" />
+            <button>Add</button> -->
+        <!-- </form>
+    </body> -->
+        <div class="container mt-5">
+            <h2 class="mb-4">Add New Listing</h2>
+            <form method="POST" action="/listings"  class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="listing[title]" id="title" placeholder="Enter title" type="text" class="form-control" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter a good tittle.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" id="description" placeholder="Enter description" class="form-control" rows="4" required></textarea>
+                    <div class="invalid-feedback">
+                       Please enter a short description.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input name="listing[price]" id="price" placeholder="Enter price" type="number" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid price.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input name="listing[image]" id="image" placeholder="Enter image URL" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" id="location" placeholder="Enter location" type="text" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Loacation should be valid.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input name="listing[country]" id="country" placeholder="Enter country" type="text" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Country name should be valid.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>

@@ -1,0 +1,46 @@
+
+        <!-- <style>
+        
+        /* Create New Listing Button */
+        form {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #ff385c;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e63950;
+        }
+    </style> -->
+ <% layout("/layouts/boilerplate") %>
+<body>
+    <div class="listings-container">
+        <div class="listings-row">
+            <% for (let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+                <div class="listing-card">
+                    <img src="<%= listing.image %>" class="listing-image" alt="listing-image">
+                    <div class="listing-body">
+                        <h5 class="listing-title"><%= listing.title %></h5>
+                        <p class="listing-price">&#8377;<%= listing.price.toLocaleString("en-IN") %></p>
+                        <p class="listing-description"><%= listing.description %></p>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+        </div>
+    </div>
+    
+</body>
+
